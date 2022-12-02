@@ -21,7 +21,7 @@
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% include 'includes/css_styles' %}
+    {% include 'includes/css_styles.html' %}
 
 </head>
 
@@ -46,6 +46,7 @@
         </header>
         <!-- HEADER END -->
 
+        {% block 'content' %}{% endblock 'content' %}
         <!-- CONTENT START -->
         <div class="page-content">
 
@@ -1548,7 +1549,7 @@
     </div>
 
 
-    {% include 'js_scripts.html' %}
+    {% include 'includes/js_scripts.html' %}
 
 
 </body>
