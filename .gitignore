@@ -1,2 +1,4 @@
 .env
 db.sqlite3
+templates_todo
+.templates_todo
