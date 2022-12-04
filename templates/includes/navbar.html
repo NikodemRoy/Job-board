@@ -1,3 +1,5 @@
+{% load static%}
+
 <div class="sticky-header main-bar-wraper  navbar-expand-lg">
     <div class="main-bar">
 
@@ -6,7 +8,8 @@
             <div class="logo-header">
                 <div class="logo-header-inner logo-header-one">
                     <a href="index.html">
-                        <img src="images/logo-dark.png" alt="">
+                        <img src="{% static 'images/logo-light-3.png' %}" alt="" class="default-scroll-show">
+                        <img src="{% static 'images/logo-dark.png' %}" alt="" class="on-scroll-show">
                     </a>
                 </div>
             </div>
@@ -125,8 +128,7 @@
                 <div class="extra-cell">
                     <div class="header-nav-btn-section">
                         <div class="twm-nav-btn-left">
-                            <a class="twm-nav-sign-up" data-bs-toggle="modal" href="#sign_up_popup"
-                                role="button">
+                            <a class="twm-nav-sign-up" data-bs-toggle="modal" href="#sign_up_popup" role="button">
                                 <i class="feather-log-in"></i> Sign Up
                             </a>
                         </div>
