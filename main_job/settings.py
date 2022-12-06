@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # developer added APPS
     'APPS.job_board',
+    'APPS.accounts',
 ]
 
 MIDDLEWARE = [

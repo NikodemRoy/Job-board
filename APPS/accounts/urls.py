@@ -7,11 +7,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index_page, name='index_page'),
+    path('register/', views.register, name='register'),
 
 ]
 
-# serving media files
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
