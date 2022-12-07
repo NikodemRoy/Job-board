@@ -14,3 +14,12 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.email
+
+class EmployerProfile(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, db_index=True)
+    brand_name = models.CharField(max_length=96, blank=True)
+
+class WorkerProfile(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, db_index=True)
+    name = models.CharField(max_length=96, blank=True)
+    surname = models.CharField(max_length=96, blank=True)
