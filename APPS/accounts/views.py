@@ -28,7 +28,9 @@ def employer_registration(request):
         else:
             # messages.error(request, "Email or password is incorect!")
             return redirect('index_page')
-    return render(request, "job_board/main_index.html")
+
+    context = {'employer_form':form}
+    return render(request, "job_board/main_index.html", context)
 
 
 def worker_registration(request):
@@ -50,4 +52,6 @@ def worker_registration(request):
         else:
             # messages.error(request, "Email or password is incorect!")
             return redirect('index_page')
-    return render(request, "job_board/main_index.html")
+
+    context = {'employer_form':form}
+    return render(request, "job_board/main_index.html", context)
