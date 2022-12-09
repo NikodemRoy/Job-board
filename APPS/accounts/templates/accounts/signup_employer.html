@@ -3,11 +3,19 @@
 
 <div class="tab-pane fade" id="sign-Employer">
     <div class="row">
-        <form>
+        <form id="signup_form" method="post">
+            {% csrf_token %}
+
+            <div>{{ form.username}}</div>
+            <div>{{ form.email}}</div>
+
+            <div>{{ form.password1}}</div>
+            <div>{{ form.password2}}</div>
+
             <div class="col-lg-12">
-                <div class="form-group mb-3">
+                <div class="form-group mb-3">{{ form.email}}
                     <input name="phone" type="text" class="form-control" required=""
-                        placeholder="Email*">
+                        placeholder="Email*">{{ form.email}}
                 </div>
             </div>
 
