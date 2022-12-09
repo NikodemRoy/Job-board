@@ -3,10 +3,8 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 
 from allauth.account.views import SignupView
-from accounts.forms import EmployerSignupForm
-from accounts.forms import WorkerSignupForm
 
-from .forms import RegisterForm
+from .forms import RegisterForm, WorkerSignupForm, EmployerSignupForm
 from .models import EmployerProfile
 
 def login_page(request):

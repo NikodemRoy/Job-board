@@ -11,8 +11,8 @@ urlpatterns = [
     path('employer-registration/', views.employer_registration, name='employer_registration'),
     path('worker-registration/', views.worker_registration, name='employer_registration'),
     path('accounts/', include('allauth.urls')),
-    # path('worker/signup', WorkerSignupView.as_view(), name='worker_signup'),
-    # path('employer/signup', EmployerSignupView.as_view(), name='employer_signup'),
+    path('worker/signup', views.WorkerSignupView.as_view(), name='worker_signup'),
+    path('employer/signup', views.EmployerSignupView.as_view(), name='employer_signup'),
 ]
 
 
