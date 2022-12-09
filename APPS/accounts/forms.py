@@ -21,9 +21,16 @@ class CustomUserChangeForm(UserChangeForm):
         model = get_user_model()
         fields = ('email',)
 
-class EmployeeSignupForm(SignupForm):
+class WorkerSignupForm(SignupForm):
     def save(self, request):
-        user = super(EmployeeSignupForm, self).save(request)
+        user = super(WorkerSignupForm, self).save(request)
         user.account_type = 'worker'
+        user.save()
+        return user
+
+class EmployerSignupForm(SignupForm):
+    def save(self, request):
+        user = super(EmployerSignupForm, self).save(request)
+        user.account_type = 'employer'
         user.save()
         return user
