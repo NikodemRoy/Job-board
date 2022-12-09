@@ -19,6 +19,14 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.email
+    
+    @property
+    def is_worker(self):
+        return str(self.account_type) == 'worker'
+
+    @property
+    def is_manager(self):
+        return str(self.account_type) == 'employer'
 
 class EmployerProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, db_index=True)
