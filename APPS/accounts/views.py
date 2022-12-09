@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 
+from allauth.account.views import SignupView
+from accounts.forms import EmployerSignupForm
+from accounts.forms import WorkerSignupForm
+
 from .forms import RegisterForm
 from .models import EmployerProfile
 
@@ -55,3 +59,30 @@ def worker_registration(request):
 
     context = {'employer_form':form}
     return render(request, "job_board/main_index.html", context)
+
+
+# Employee Signup View
+class EmployerSignupView(SignupView):
+
+    template_name = 'users/signup.html'  # Custom template is mandatory
+    form_class = EmployerSignupForm
+    redirect_field_name = 'next'  # Important to redirect user if has next url
+
+    # This is mandatory and copy-pasted
+    def get_context_data(self, **kwargs):
+        ret = super(EmployerSignupForm, self).get_context_data(**kwargs)
+        ret.update(self.kwargs)
+        return ret
+
+# Employee Signup View
+class WorkerSignupView(SignupView):
+
+    template_name = 'users/signup.html'  # Custom template is mandatory
+    form_class = WorkerSignupForm
+    redirect_field_name = 'next'  # Important to redirect user if has next url
+
+    # This is mandatory and copy-pasted
+    def get_context_data(self, **kwargs):
+        ret = super(WorkerSignupForm, self).get_context_data(**kwargs)
+        ret.update(self.kwargs)
+        return ret
