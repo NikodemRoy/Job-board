@@ -153,5 +153,14 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 #allauth
 SITE_ID = 1
-ACCOUNT_EMAIL_REQUIRED=True
-ACCOUNT_AUTHENTICATION_METHOD='email'
+
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_REQUIRED= True
+ACCOUNT_AUTHENTICATION_METHOD= 'email'
+ACCOUNT_UNIQUE_EMAIL = True
+
+# puting out emails to the command line console, instead of sending them (for testing)
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+LOGIN_REDIRECT_URL = "index_page"
+LOGOUT_REDIRECT_URL = "index_page"
