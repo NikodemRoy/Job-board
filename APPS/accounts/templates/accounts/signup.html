@@ -36,40 +36,28 @@
                                     {{form}}
                                     <div class="col-lg-12">
                                         <div class="form-group mb-3">
-                                            <input name="phone" type="text" class="form-control" required=""
-                                                placeholder="Email*">
-                                        </div>
-                                    </div>
-
-                                    <!-- <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="email" type="text" class="form-control" required=""
-                                                placeholder="Password*">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="email" type="text" class="form-control" required=""
-                                                placeholder="Repeat Password*">
+                                            <label for="id_email">E-mail:</label>
+                                            <input type="email" class="form-control" name="email"
+                                                placeholder="E-mail address worker" autocomplete="email" required
+                                                id="id_email">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12">
                                         <div class="form-group mb-3">
-                                            <div class=" form-check">
-                                                <input type="checkbox" class="form-check-input" id="agree1">
-                                                <label class="form-check-label" for="agree1">I agree to the <a
-                                                        href="javascript:;">Terms and conditions</a></label>
-                                                <p>Already registered?
-                                                    <button class="twm-backto-login" data-bs-target="#sign_up_popup2"
-                                                        data-bs-toggle="modal" data-bs-dismiss="modal">Log in
-                                                        here</button>
-                                                </p>
-                                            </div>
+                                            <input type="password" class="form-control" name="password1"
+                                                placeholder="Password" autocomplete="new-password" required
+                                                id="id_password1">
                                         </div>
-                                    </div> -->
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group mb-3">
+                                            <input type="password" class="form-control" name="password2"
+                                                placeholder="Password (again)" autocomplete="new-password" required
+                                                id="id_password2">
+                                        </div>
+                                    </div>
 
                                     <div class="col-lg-12">
                                         <p>Already registered?
@@ -78,8 +66,13 @@
                                         </p>
                                     </div>
 
+                                    {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}"
+                                        value="{{ redirect_field_value }}" />
+                                    {% endif %}
+
                                     <div class="col-md-12">
-                                        <button type="submit" class="site-button">Sign Up worker</button>
+                                        <button type="submit" class="site-button">Sign Up</button>
                                     </div>
 
                                 </form>
@@ -98,27 +91,31 @@
                                 <form id="signup_form" method="post">
                                     {% csrf_token %}
                                     {{form}}
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="phone" type="text" class="form-control" required=""
-                                                placeholder="xDDDDDDDD">
-                                        </div>
-                                    </div>
-
-                                    <!-- <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="email" type="text" class="form-control" required=""
-                                                placeholder="xDDDDDDDD">
-                                        </div>
-                                    </div>
-
 
                                     <div class="col-lg-12">
                                         <div class="form-group mb-3">
-                                            <input name="email" type="text" class="form-control" required=""
-                                                placeholder="xDDDDDDDD">
+                                            <label for="id_email">E-mail:</label>
+                                            <input type="email" class="form-control" name="email"
+                                                placeholder="E-mail address employer" autocomplete="email" required
+                                                id="id_email">
                                         </div>
-                                    </div> -->
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group mb-3">
+                                            <input type="password" class="form-control" name="password1"
+                                                placeholder="Password" autocomplete="new-password" required
+                                                id="id_password1">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group mb-3">
+                                            <input type="password" class="form-control" name="password2"
+                                                placeholder="Password (again)" autocomplete="new-password" required
+                                                id="id_password2">
+                                        </div>
+                                    </div>
 
                                     <div class="col-lg-12">
                                         <p>Already registered?
@@ -127,9 +124,15 @@
                                         </p>
                                     </div>
 
+                                    {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}"
+                                        value="{{ redirect_field_value }}" />
+                                    {% endif %}
+
                                     <div class="col-md-12">
                                         <button type="submit" class="site-button">Sign Up</button>
                                     </div>
+
                                 </form>
                             </div>
                         </div>
@@ -179,5 +182,5 @@
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-    <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+    <button type="submit">Sign Up &raquo;</button>
 </form>
