@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
-            <form>
+            <!-- <form> -->
                 <div class="modal-header">
                     <h2 class="modal-title" id="sign_up_popupLabel2">Login</h2>
                     <p>Login and get access to all the features of Jobzilla</p>
@@ -28,24 +28,22 @@
                         </ul>
 
                         <div class="tab-content" id="myTab2Content">
+
                             <!--Login Candidate Content-->
-
-
                             <div class="tab-pane fade show active" id="login-candidate">
                                 <div class="row">
-                                    <form>
+                                    
+                                    <form class="login" method="POST" action="{% url 'account_login' %}">
 
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <input name="username" type="text" required="" class="form-control"
-                                                    placeholder=" Worker Email*">
+                                                <input type="email" class="form-control" name="login" placeholder=" Worker Email*" autocomplete="email" required id="id_login">
                                             </div>
                                         </div>
 
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <input name="email" type="text" class="form-control" required=""
-                                                    placeholder="Worker Password*">
+                                                <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="current-password" required id="id_password">
                                             </div>
                                         </div>
 
@@ -68,16 +66,17 @@
                                                     data-bs-toggle="modal" data-bs-dismiss="modal">Sign Up</button>
                                             </div>
                                         </div>
-                                        
+
                                     </form>
                                 </div>
                             </div>
 
                             <!--Login Employer Content-->
-
                             <div class="tab-pane fade" id="login-Employer">
                                 <div class="row">
-                                    <form>
+
+                                    <form class="login" method="POST" action="{% url 'account_login' %}">
+                                        
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
                                                 <input name="username" type="text" required="" class="form-control"
@@ -87,8 +86,7 @@
 
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
-                                                <input name="email" type="text" class="form-control" required=""
-                                                    placeholder="Employer Password*">
+                                                <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="current-password" required id="id_password">
                                             </div>
                                         </div>
 
@@ -96,7 +94,8 @@
                                         <div class="col-lg-12">
                                             <div class="form-group mb-3">
                                                 <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input" id="Password4">
+                                                    <!-- <input type="checkbox" class="form-check-input" id="Password4"> -->
+                                                    <input type="checkbox" class="form-check-input" id="id_remember">
                                                     <label class="form-check-label rem-forgot" for="Password4">Remember
                                                         me <a href="javascript:;">Forgot
                                                             Password</a></label>
@@ -129,7 +128,7 @@
                         <li><a href="javascript" class="google-clr"><i class="fab fa-google"></i></a></li>
                     </ul>
                 </div>
-            </form>
+            <!-- </form> -->
         </div>
     </div>
 </div>
@@ -159,6 +158,6 @@
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-    <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+    <button class="primaryAction" type="submit">Sign In</button>
   </form>
