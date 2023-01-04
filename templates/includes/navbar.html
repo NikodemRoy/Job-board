@@ -140,6 +140,26 @@
                     </div>
                 </div>
 
+                {% if user.id is not None %}
+                <div class="extra-cell">
+                    <div class="header-nav-btn-section">
+
+                        <p>{{user.email}}</p>
+
+                    </div>
+                </div>
+
+                <div class="extra-cell">
+                    <div class="header-nav-btn-section">
+
+                        <a href="{% url 'account_logout' %}"><p>Logout</p></a>
+
+                    </div>
+                </div>
+
+
+                {% endif %}
+
             </div>
 
 

@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 
 from allauth.account.views import SignupView
+from allauth.account.forms import SignupForm
 
 from .forms import RegisterForm, WorkerSignupForm, EmployerSignupForm
 from .models import EmployerProfile
@@ -18,10 +19,10 @@ class EmployerSignupView(SignupView):
     redirect_field_name = 'next'  # Important to redirect user if has next url
 
     # This is mandatory and copy-pasted
-    # def get_context_data(self, **kwargs):
-    #     ret = super(EmployerSignupForm, self).get_context_data(**kwargs)
-    #     ret.update(self.kwargs)
-    #     return ret
+    def get_context_data(self, **kwargs):
+        ret = super(EmployerSignupForm, self).get_context_data(**kwargs)
+        ret.update(self.kwargs)
+        return ret
 
 # Employee Signup View
 class WorkerSignupView(SignupView):
@@ -31,10 +32,10 @@ class WorkerSignupView(SignupView):
     redirect_field_name = 'next'  # Important to redirect user if has next url
 
     # This is mandatory and copy-pasted
-    # def get_context_data(self, **kwargs):
-    #     ret = super(WorkerSignupForm, self).get_context_data(**kwargs)
-    #     ret.update(self.kwargs)
-    #     return ret
+    def get_context_data(self, **kwargs):
+        ret = super(WorkerSignupForm, self).get_context_data(**kwargs)
+        ret.update(self.kwargs)
+        return ret
 
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

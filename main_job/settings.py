@@ -71,7 +71,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # needed for allaouth
-                'django.template.context_processors.request'
+                'django.template.context_processors.request',
+
+                'APPS.accounts.context_processor.login_ctx_tag'
             ],
         },
     },
@@ -154,10 +156,10 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 #allauth
 SITE_ID = 1
 
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_EMAIL_REQUIRED= True
-ACCOUNT_AUTHENTICATION_METHOD= 'email'
-ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 # puting out emails to the command line console, instead of sending them (for testing)
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

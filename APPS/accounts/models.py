@@ -8,7 +8,7 @@ ACCOUNT_TYPE = [
 ]
 
 class CustomUser(AbstractUser):
-    # username = None
+    username = None
     email = models.EmailField(unique=True, blank=False, error_messages={'unique': "A user with that email already exists!"})
 
     account_type = models.CharField(choices=ACCOUNT_TYPE,  max_length=10)

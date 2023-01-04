@@ -9,6 +9,11 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = get_user_model()
         fields = ('email', 'password1', 'password2')
+        def save(self, request):
+            user = super(RegisterForm, self).save(request)
+            user.account_type = 'worker'
+            user.save()
+            return user
 
 class CustomLoginForm(AuthenticationForm):
     class Meta:
