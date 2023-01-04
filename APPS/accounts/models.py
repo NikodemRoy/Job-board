@@ -25,7 +25,7 @@ class CustomUser(AbstractUser):
         return str(self.account_type) == 'worker'
 
     @property
-    def is_manager(self):
+    def is_employer(self):
         return str(self.account_type) == 'employer'
 
 class EmployerProfile(models.Model):

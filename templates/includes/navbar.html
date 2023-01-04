@@ -120,11 +120,13 @@
 
             <!-- Header Right Section-->
             <div class="extra-nav header-2-nav">
-                <div class="extra-cell">
+                <!-- <div class="extra-cell">
                     <div class="header-search">
                         <a href="#search" class="header-search-icon"><i class="feather-search"></i></a>
                     </div>
-                </div>
+                </div> -->
+
+                {% if not user.is_authenticated %}
                 <div class="extra-cell">
                     <div class="header-nav-btn-section">
                         <div class="twm-nav-btn-left">
@@ -132,15 +134,27 @@
                                 <i class="feather-log-in"></i> Login
                             </a>
                         </div>
+                    </div>
+                </div>
+
+                {% elif request.user.is_authenticated and request.user.is_employer %}
+
+                <div class="extra-cell">
+                    <div class="header-nav-btn-section">
+                        <div class="twm-nav-btn-left">
+                            <a class="twm-nav-sign-up" href="{% url 'account_logout' %}" role="button">
+                                <i class="feather-log-in"></i> Logout
+                            </a>
+                        </div>
                         <div class="twm-nav-btn-right">
                             <a href="dash-post-job.html" class="twm-nav-post-a-job">
-                                <i class="feather-briefcase"></i> Post a job
+                                <i class="feather-briefcase"></i> Post Offer
                             </a>
                         </div>
                     </div>
                 </div>
 
-                {% if user.id is not None %}
+                {% else %}
                 <div class="extra-cell">
                     <div class="header-nav-btn-section">
 
