@@ -8,7 +8,9 @@
             <div class="logo-header">
                 <div class="logo-header-inner logo-header-one">
                     <a href="index.html">
+                        {% if request.path == '/' %}
                         <img src="{% static 'images/logo-light-3.png' %}" alt="" class="default-scroll-show">
+                        {% endif %}
                         <img src="{% static 'images/logo-dark.png' %}" alt="" class="on-scroll-show">
                     </a>
                 </div>
@@ -130,7 +132,10 @@
                 <div class="extra-cell">
                     <div class="header-nav-btn-section">
                         <div class="twm-nav-btn-left">
-                            <a class="twm-nav-sign-up" data-bs-toggle="modal" href="#sign_up_popup2" role="button">
+                            <!-- <a class="twm-nav-sign-up" data-bs-toggle="modal" href="#sign_up_popup2" role="button">
+                                <i class="feather-log-in"></i> Login
+                            </a> -->
+                            <a class="twm-nav-sign-up" href="{% url 'custom_login' %}" role="button">
                                 <i class="feather-log-in"></i> Login
                             </a>
                         </div>

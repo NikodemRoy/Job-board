@@ -43,13 +43,18 @@
     <div class="page-wraper">
 
         <!-- HEADER START -->
-        <header class="site-header header-style-light mobile-sider-drawer-menu">
+        <header
+            class="site-header header-style-{% if request.path == '/' %}light{% else %}3{% endif %} mobile-sider-drawer-menu">
+
             {% include 'includes/navbar.html' %}
         </header>
         <!-- HEADER END -->
 
+
+
         {% block 'content' %}{% endblock 'content' %}
         
+
 
         <!-- FOOTER START -->
         {% include 'includes/footer.html' %}
@@ -64,7 +69,9 @@
         {% include 'accounts/login.html' %}
 
 
-    {% include 'includes/js_scripts.html' %}
+
+
+        {% include 'includes/js_scripts.html' %}
 
 
 </body>

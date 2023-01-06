@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 
-from allauth.account.views import SignupView
-from allauth.account.forms import SignupForm
+from allauth.account.views import SignupView, LoginView
+from allauth.account.forms import SignupForm, LoginForm
 
 from .forms import RegisterForm, WorkerSignupForm, EmployerSignupForm
 from .models import EmployerProfile
 
 def login_page(request):
-    return render(request, 'accounts/login.html')
+    return render(request, 'accounts/test.html')
 
 # Employee Signup View
 class EmployerSignupView(SignupView):
@@ -34,6 +34,18 @@ class WorkerSignupView(SignupView):
     # This is mandatory and copy-pasted
     def get_context_data(self, **kwargs):
         ret = super(WorkerSignupForm, self).get_context_data(**kwargs)
+        ret.update(self.kwargs)
+        return ret
+
+class CustomLoginView(LoginView):
+
+    form_class = LoginForm
+    template_name = "accounts/test.html"
+    success_url = None
+    redirect_field_name = "next"
+
+    def get_context_data(self, **kwargs):
+        ret = super(CustomLoginView, self).get_context_data(**kwargs)
         ret.update(self.kwargs)
         return ret
 

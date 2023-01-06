@@ -5796,7 +5796,7 @@ button.scroltop span {
 
 /*inner page banner*/
 .wt-bnr-inr {
-  height: 390px;
+  height: 90px;
   background-size: cover;
   background-position: center center;
   display: table;
@@ -5805,7 +5805,7 @@ button.scroltop span {
 }
 @media (max-width: 767px) {
   .wt-bnr-inr {
-    height: 380px;
+    height: 70px;
   }
 }
 .wt-bnr-inr .container {
@@ -11695,6 +11695,7 @@ strong {
 
 .wt-panel-heading {
   border-bottom: 1px solid #ddd;
+  text-align: center;
 }
 
 /*My Account css*/

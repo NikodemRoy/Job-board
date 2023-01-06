@@ -1,0 +1,406 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block 'content' %}
+
+<div class="page-content">
+
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper bg-center"
+        style="background-image:url({% static 'images/banner/banner1.jpg' %})">
+    </div>
+    <!-- INNER PAGE BANNER END -->
+
+    <!-- Employer Account START -->
+    <div class="section-full p-t10 site-bg-white bg-cover twm-ac-fresher-wrap"
+        style="background-image:url({% static 'images/background/pattern.jpg' %})">
+        <span class="twm-section-bg-img">
+            <img src="{% static 'images/reg-bg2.png' %}" alt="">
+        </span>
+
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-lg-8 col-md-12">
+                    <div class="twm-right-section-panel-wrap2">
+                        <!--Filter Short By-->
+                        <div class="twm-right-section-panel site-bg-primary">
+
+                            <!--Basic Information-->
+                            <div class="panel panel-default ">
+                                <div class="panel-heading wt-panel-heading p-a20 justify-content-center">
+                                    <h3 class="panel-tittle m-a0">Login</h3>
+                                </div>
+                                <div class="panel-body wt-panel-body p-a20 ">
+
+
+
+                                    <div class="twm-tabs-style-1">
+
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade show active">
+
+                                                <div class="row">
+
+                                                    <form class="login" method="POST" action="{% url 'custom_login' %}">
+                                                        {% csrf_token %}
+                                                        {{form.as_p}}
+
+                                                        {% if form.errors %}
+                                                            {% for field in form %}
+                                                                {% for error in field.errors %}
+                                                                    <div class="alert alert-error">
+                                                                        <strong>{{ error|escape }}</strong>
+                                                                    </div>
+                                                                {% endfor %}
+                                                            {% endfor %}
+
+                                                            {% for error in form.non_field_errors %}
+                                                                <div class="alert alert-error">
+                                                                    <strong>{{ error|escape }}</strong>
+                                                                </div>
+                                                            {% endfor %}
+                                                        {% endif %}
+
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mb-3">
+                                                                <input type="email" class="form-control" name="login"
+                                                                    placeholder=" Worker Email*" autocomplete="email"
+                                                                    required id="id_login">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mb-3">
+                                                                <input type="password" class="form-control"
+                                                                    name="password" placeholder="Password"
+                                                                    autocomplete="current-password" required
+                                                                    id="id_password">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group mb-3">
+                                                                <div class=" form-check">
+                                                                    <input type="checkbox" class="form-check-input"
+                                                                        id="Password3">
+                                                                    <label class="form-check-label rem-forgot"
+                                                                        for="Password3">Remember me
+                                                                </div>
+
+                                                                <div class="form-group mb-3">
+                                                                    <a class="text-primary"
+                                                                        href="{% url 'account_reset_password' %}">Forgot
+                                                                        Password</a></label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <button type="submit"
+                                                                class="site-button mx-auto d-block">Log in</button>
+                                                        </div>
+
+                                                    </form>
+
+
+                                                    <div class="col-md-12">
+
+                                                        <div class="mt-3 mb-3">Don't have an account ?
+                                                            <a href="" class="link-primary">Sign Up</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="modal-footer d-flex justify-content-center">
+                                                        <span class="modal-f-title">Login or Sign up with</span>
+                                                        <ul class="twm-modal-social">
+                                                            <li><a href="javascript" class="facebook-clr"><i
+                                                                        class="fab fa-facebook-f"></i></a></li>
+                                                            <li><a href="javascript" class="twitter-clr"><i
+                                                                        class="fab fa-twitter"></i></a></li>
+                                                            <li><a href="javascript" class="linkedin-clr"><i
+                                                                        class="fab fa-linkedin-in"></i></a>
+                                                            </li>
+                                                            <li><a href="javascript" class="google-clr"><i
+                                                                        class="fab fa-google"></i></a></li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="tab-pane fade" id="Employment">
+                                                <div class="row">
+
+                                                    <div class="col-xl-6 col-lg-6 col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Current Desination*</label>
+                                                            <div class="ls-inputicon-box">
+                                                                <input class="form-control" name="company_name"
+                                                                    type="text" placeholder="Your Job Title">
+                                                                <i class="fs-input-icon fa fa-address-card "></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-6 col-lg-6 col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Current Company*</label>
+                                                            <div class="ls-inputicon-box">
+                                                                <input class="form-control" name="company_Email"
+                                                                    type="email"
+                                                                    placeholder="Where you are currently working">
+                                                                <i class="fs-input-icon fas fa-building"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12">
+                                                        <div class="form-group">
+                                                            <label>Expected Salary</label>
+                                                            <div class="row twm-form-radio-inline">
+
+                                                                <div class="col-md-6">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <label class="form-check-label"
+                                                                        for="flexRadioDefault1">
+                                                                        US Dollars
+                                                                    </label>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <input class="form-check-input" type="radio"
+                                                                        name="flexRadioDefault" id="flexRadioDefault5"
+                                                                        checked>
+                                                                    <label class="form-check-label"
+                                                                        for="flexRadioDefault5">
+                                                                        Indian Rupees
+                                                                    </label>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12">
+                                                        <div>
+                                                            <label>Annual Salary</label>
+                                                            <div class="row">
+
+                                                                <div class="col-xl-6 col-lg-6">
+                                                                    <div class="form-group">
+                                                                        <div class="ls-inputicon-box">
+                                                                            <select class="wt-select-box selectpicker"
+                                                                                data-live-search="true" title=""
+                                                                                id="s-Lakh" data-bv-field="size">
+                                                                                <option class="bs-title-option"
+                                                                                    value="">Lakh</option>
+                                                                                <option>0 lakh</option>
+                                                                                <option>1 lakh</option>
+                                                                                <option>2 lakh</option>
+                                                                                <option>5 lakh</option>
+                                                                                <option>4 lakh</option>
+                                                                                <option>5 lakh</option>
+                                                                            </select>
+                                                                            <i
+                                                                                class="fs-input-icon fa fa-dollar-sign"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xl-6 col-lg-6">
+                                                                    <div class="form-group">
+                                                                        <div class="ls-inputicon-box">
+                                                                            <select class="wt-select-box selectpicker"
+                                                                                data-live-search="true" title=""
+                                                                                id="s-Thousand" data-bv-field="size">
+                                                                                <option class="bs-title-option"
+                                                                                    value="">Thousand</option>
+                                                                                <option> 05 Thousand </option>
+                                                                                <option> 10 Thousand </option>
+                                                                                <option> 15 Thousand </option>
+                                                                                <option> 20 Thousand </option>
+                                                                                <option> 25 Thousand </option>
+                                                                                <option> 30 Thousand </option>
+                                                                                <option> 35 Thousand </option>
+                                                                                <option> 40 Thousand </option>
+                                                                                <option> 45 Thousand </option>
+                                                                                <option> 50 Thousand </option>
+                                                                            </select>
+                                                                            <i
+                                                                                class="fs-input-icon fa fa-dollar-sign"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-xl-12 col-lg-12">
+                                                        <div>
+                                                            <label>Working Since</label>
+                                                            <div class="row">
+
+                                                                <div class="col-xl-6 col-lg-6">
+                                                                    <div class="form-group">
+                                                                        <div class="ls-inputicon-box">
+                                                                            <select class="wt-select-box selectpicker"
+                                                                                data-live-search="true" title=""
+                                                                                id="s-Year2" data-bv-field="size">
+                                                                                <option class="bs-title-option"
+                                                                                    value="">Year</option>
+                                                                                <option>0</option>
+                                                                                <option>1</option>
+                                                                                <option>2</option>
+                                                                                <option>3</option>
+                                                                                <option>4</option>
+                                                                                <option>5</option>
+                                                                            </select>
+                                                                            <i class="fs-input-icon fa fa-calendar"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xl-6 col-lg-6">
+                                                                    <div class="form-group">
+                                                                        <div class="ls-inputicon-box">
+                                                                            <select class="wt-select-box selectpicker"
+                                                                                data-live-search="true" title=""
+                                                                                id="s-Month2" data-bv-field="size">
+                                                                                <option class="bs-title-option"
+                                                                                    value="">Month</option>
+                                                                                <option> 1 </option>
+                                                                                <option> 2 </option>
+                                                                                <option> 3 </option>
+                                                                                <option> 4 </option>
+                                                                                <option> 5 </option>
+                                                                                <option> 6 </option>
+                                                                                <option> 7 </option>
+                                                                                <option> 8 </option>
+                                                                                <option> 9 </option>
+                                                                                <option> 10 </option>
+                                                                                <option> 11 </option>
+                                                                                <option> 12 </option>
+                                                                            </select>
+                                                                            <i class="fs-input-icon fa fa-calendar"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Current Location</label>
+                                                            <div class="ls-inputicon-box">
+                                                                <input class="form-control" name="company_phone"
+                                                                    type="text"
+                                                                    placeholder="Tell us about your current city">
+                                                                <i class="fs-input-icon fa fa-globe-americas"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12">
+                                                        <div class="form-group">
+                                                            <label>Duration of Notice Period</label>
+                                                            <div class="ls-inputicon-box">
+                                                                <select class="wt-select-box selectpicker"
+                                                                    data-live-search="true" title="" id="s-category"
+                                                                    data-bv-field="size">
+                                                                    <option class="bs-title-option" value="">Days
+                                                                    </option>
+                                                                    <option>05 Days</option>
+                                                                    <option>10 Days</option>
+                                                                    <option>15 Days</option>
+                                                                    <option>30 Days</option>
+                                                                    <option>2 Months</option>
+                                                                    <option>3 Months</option>
+                                                                </select>
+                                                                <i class="fs-input-icon fa fa-calendar"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Skills</label>
+                                                            <div class="ls-inputicon-box">
+                                                                <input class="form-control" type="text"
+                                                                    value="Finance, Sales, Retail, Engineering">
+                                                                <i class="fs-input-icon fas fa-asterisk"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Industry</label>
+                                                            <div class="ls-inputicon-box">
+                                                                <input class="form-control" name="company_phone"
+                                                                    type="text" placeholder="Your Industry">
+                                                                <i class="fs-input-icon fa fa-industry"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Functional Area</label>
+                                                            <div class="ls-inputicon-box">
+                                                                <input class="form-control" name="company_phone"
+                                                                    type="text" placeholder="Your Department">
+                                                                <i class="fs-input-icon fa fa-industry"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Role</label>
+                                                            <div class="ls-inputicon-box input_fields_custom">
+                                                                <input class="form-control" name="company_phone"
+                                                                    type="text"
+                                                                    placeholder="Select the role that you work in">
+                                                                <i class="fs-input-icon fa fa-user"></i>
+                                                            </div>
+                                                            <div class="text-right m-tb10">
+                                                                <button class="add_field_custom">Add More Fields <i
+                                                                        class="fa fa-plus"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-xl-12 col-lg-12 col-md-12">
+                                                        <div class="text-left">
+                                                            <button type="submit" class="site-button">Continue</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Employer Account START END -->
+
+
+</div>
+<!-- CONTENT END -->
+
+{% endblock 'content' %}
