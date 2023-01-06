@@ -136,7 +136,7 @@
                                 <i class="feather-log-in"></i> Login
                             </a> -->
                             <a class="twm-nav-sign-up" href="{% url 'custom_login' %}" role="button">
-                                <i class="feather-log-in"></i> Login
+                                <i class="feather-log-in"></i> Login/Register
                             </a>
                         </div>
                     </div>
@@ -160,18 +160,20 @@
                 </div>
 
                 {% else %}
-                <div class="extra-cell">
-                    <div class="header-nav-btn-section">
-
-                        <p>{{user.email}}</p>
-
-                    </div>
-                </div>
 
                 <div class="extra-cell">
                     <div class="header-nav-btn-section">
+                        <div class="twm-nav-btn-right">
+                            <a href="dash-post-job.html" class="twm-nav-post-a-job">
+                                <i class="feather-briefcase"></i> {{user.email}}
+                            </a>
+                        </div>
 
-                        <a href="{% url 'account_logout' %}"><p>Logout</p></a>
+                        <div class="twm-nav-btn-left">
+                            <a class="twm-nav-sign-up" href="{% url 'account_logout' %}" role="button">
+                                <i class="feather-log-in"></i> Logout
+                            </a>
+                        </div>
 
                     </div>
                 </div>
