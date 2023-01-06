@@ -40,7 +40,7 @@ class WorkerSignupView(SignupView):
 class CustomLoginView(LoginView):
 
     form_class = LoginForm
-    template_name = "accounts/test.html"
+    template_name = "accounts/new_login.html"
     success_url = None
     redirect_field_name = "next"
 

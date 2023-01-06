@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # cripsy forms
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -166,3 +168,5 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 LOGIN_REDIRECT_URL = "index_page"
 LOGOUT_REDIRECT_URL = "index_page"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
