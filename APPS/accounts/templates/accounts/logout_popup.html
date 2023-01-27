@@ -1,0 +1,39 @@
+<!--Logout popup -->
+<div class="modal fade twm-sign-up" id="logout_popup" aria-hidden="true" aria-labelledby="sign_up_popupLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- <form> -->
+            <div class="modal-header">
+                <h2 class="modal-title" id="sign_up_popupLabel2">Logout</h2>
+                <p>Hello <b>{{user.email}}</b>, are you sure you want to log out? </p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="twm-tabs-style-2">
+
+
+                    <div class="tab-content" id="myTab2Content">
+
+                        <!--Login Candidate Content-->
+                        <div class="tab-pane fade show active" id="login-candidate">
+                            <div class="row">
+
+                                <form class="login" method="POST" action="{% url 'account_logout' %}">
+                                    {% csrf_token %}
+
+                                    {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}"
+                                        value="{{ redirect_field_value }}" />
+                                    {% endif %}
+
+                                    <div class="col-md-12">
+                                        <button type="submit" class="site-button">Logout</button>
+                                    </div>
+
+                                </form>
+
+
+                            </div>
+                        </div>

@@ -146,11 +146,19 @@
 
                 <div class="extra-cell">
                     <div class="header-nav-btn-section">
-                        <div class="twm-nav-btn-left">
+
+                        <!-- działa -->
+                        <!-- <div class="twm-nav-btn-left">
                             <a class="twm-nav-sign-up" href="{% url 'account_logout' %}" role="button">
                                 <i class="feather-log-in"></i> Logout
                             </a>
+                        </div> -->
+                        <div class="twm-nav-btn-left">
+                            <a class="twm-nav-sign-up" data-bs-toggle="modal" href="#logout_popup" role="button">
+                                <i class="feather-log-in"></i> Logout 2
+                            </a>
                         </div>
+
                         <div class="twm-nav-btn-right">
                             <a href="dash-post-job.html" class="twm-nav-post-a-job">
                                 <i class="feather-briefcase"></i> Post Offer
@@ -168,10 +176,17 @@
                                 <i class="feather-briefcase"></i> {{user.email}}
                             </a>
                         </div>
-
-                        <div class="twm-nav-btn-left">
+                        
+                        <!-- działa -->
+                        <!-- <div class="twm-nav-btn-left">
                             <a class="twm-nav-sign-up" href="{% url 'account_logout' %}" role="button">
                                 <i class="feather-log-in"></i> Logout
+                            </a>
+                        </div> -->
+                        <!--  -->
+                        <div class="twm-nav-btn-left">
+                            <a class="twm-nav-sign-up" data-bs-toggle="modal" href="#sign_up_popup" role="button">
+                                <i class="feather-log-in"></i> Logout 2
                             </a>
                         </div>
 

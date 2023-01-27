@@ -163,6 +163,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
+
+
 # puting out emails to the command line console, instead of sending them (for testing)
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
