@@ -40,11 +40,14 @@ INSTALLED_APPS = [
     # developer added APPS
     'APPS.job_board',
     'APPS.accounts',
+    'APPS.profiles',
+
     # The following apps are required for allauth
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    
     # cripsy forms
     'crispy_forms',
 ]
