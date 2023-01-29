@@ -6,6 +6,8 @@ JOB_TYPE = (
     ("Full time", "Full time"),
     ("Part time", "Part time"),
     ("Internship", "Internship"),
+    ("Freelance", "Freelance"),
+    ("Temporary", "Temporary"),
 )
 
 CURRENCY_TYPE = (
@@ -21,15 +23,22 @@ class JobCategory(models.Model):
         return self.name
 
 class JobOffer(models.Model):
-    employer = models.ForeignKey(EmployerProfile, related_name='EmployerProfile', on_delete=models.CASCADE) 
+    employer = models.ForeignKey(EmployerProfile, related_name='EmployerProfile', on_delete=models.CASCADE)
+
     title = models.CharField(max_length=300)
     description = models.TextField(max_length=20000)
-    location = models.CharField(max_length=300)
+    city = models.CharField(max_length=300)
+    post_code = models.CharField(max_length=300)
+    addres = models.CharField(max_length=300)
+
     job_type = models.CharField(choices=JOB_TYPE, max_length=30)
-    category = models.ForeignKey(JobCategory,related_name='Category', on_delete=models.CASCADE, blank=True)
+    category = models.ManyToManyField(JobCategory,related_name='Category', blank=True)
+    experience = models.CharField(max_length=4)
+
     salary = models.CharField(max_length=30, blank=True)
     monthly_working_hours = models.CharField(max_length=30)
     currency = models.CharField(choices=CURRENCY_TYPE, max_length=3)
+
     is_published = models.BooleanField(default=False)
     is_closed = models.BooleanField(default=False)
 
@@ -41,8 +50,10 @@ class JobOffer(models.Model):
             wage = float(self.salary/self.monthly_working_hours )
         return wage
 
-
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['created_date']
 
 # Create your models here.
