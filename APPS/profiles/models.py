@@ -4,7 +4,25 @@ from APPS.accounts.models import CustomUser
 
 class EmployerProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, db_index=True)
+
     brand_name = models.CharField(max_length=96, blank=True)
+    logo = models.ImageField(upload_to='company_logo', default='company_logo/defoult_logo.jpg')
+    banner = models.ImageField(upload_to='company_baner', default='company_logo/defoult_baner.jpg')
+
+    address = models.CharField(max_length=96, blank=True)
+    foundation_year = models.CharField(max_length=96, blank=True)
+    phone_number = models.CharField(max_length=96, blank=True)
+    number_of_workers = models.CharField(max_length=15, blank=True)
+    contact_email = models.CharField(max_length=96, blank=True)
+    website = models.CharField(max_length=96, blank=True)
+
+    fb_link = models.CharField(max_length=96, blank=True)
+    twitter_link = models.CharField(max_length=96, blank=True)
+    linkedin_link = models.CharField(max_length=96, blank=True)
+    instagram_link = models.CharField(max_length=96, blank=True)
+    youtube_link = models.CharField(max_length=96, blank=True)
+
+    company_description = models.TextField(max_length=5000, blank=True)
 
     def __str__(self):
         return self.user.email
