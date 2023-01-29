@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from django import forms
 from django.forms import ModelForm, widgets
 
+from .models import WorkerProfile, EmployerProfile
+
 from allauth.account.forms import SignupForm
 
 class RegisterForm(UserCreationForm):
@@ -30,6 +32,8 @@ class WorkerSignupForm(SignupForm):
     def save(self, request):
         user = super(WorkerSignupForm, self).save(request)
         user.account_type = 'worker'
+        profile = WorkerProfile.objects.create(user=user)
+        profile.save()
         user.save()
         return user
 
@@ -37,5 +41,7 @@ class EmployerSignupForm(SignupForm):
     def save(self, request):
         user = super(EmployerSignupForm, self).save(request)
         user.account_type = 'employer'
+        profile = EmployerProfile.objects.create(user=user)
+        profile.save()
         user.save()
         return user

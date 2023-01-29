@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser
+from .models import CustomUser, EmployerProfile, WorkerProfile
 from .forms import RegisterForm, CustomUserChangeForm
 
 class CustomUserAdmin(UserAdmin):
@@ -21,5 +21,14 @@ class CustomUserAdmin(UserAdmin):
     )
     search_fields = ('email',)
     ordering = ('email',)
+
+class EmployerProfileAdmin(admin.ModelAdmin):
+    readonly_fields = ["user",]
+
+
+class WorkerProfileAdmin(admin.ModelAdmin):
+    readonly_fields = ["user",]
     
 admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(EmployerProfile, EmployerProfileAdmin)
+admin.site.register(WorkerProfile, WorkerProfileAdmin)

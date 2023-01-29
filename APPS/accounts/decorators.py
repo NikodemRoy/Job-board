@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import user_passes_test
 def user_is_employer(view_func):
     @wraps(view_func)
     def wrap(request, *args, **kwargs):   
-        if request.user.role == 'employer':
+        if request.user.account_type == 'employer':
             return view_func(request, *args, **kwargs)
         else:
             raise PermissionDenied
@@ -17,7 +17,7 @@ def user_is_employer(view_func):
 def user_is_worker(view_func):
     @wraps(view_func)
     def wrap(request, *args, **kwargs):    
-        if request.user.role == 'worker':
+        if request.user.account_type == 'worker':
             return view_func(request, *args, **kwargs)
         else:
             raise PermissionDenied
