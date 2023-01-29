@@ -168,7 +168,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 
 
-# puting out emails to the command line console, instead of sending them (for testing)
+# printing out emails to the command line console, instead of sending them (for testing)
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 LOGIN_REDIRECT_URL = "index_page"
