@@ -6,7 +6,6 @@ from allauth.account.views import SignupView, LoginView
 from allauth.account.forms import SignupForm, LoginForm
 
 from .forms import RegisterForm, WorkerSignupForm, EmployerSignupForm
-from .models import EmployerProfile
 
 def login_page(request):
     return render(request, 'accounts/test.html')

@@ -1,7 +1,6 @@
-from locale import currency
 from django.db import models
 
-from APPS.accounts.models import WorkerProfile, EmployerProfile
+from APPS.profiles.models import WorkerProfile, EmployerProfile
 
 JOB_TYPE = (
     ("Full time", "Full time"),

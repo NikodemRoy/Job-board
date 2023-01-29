@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django import forms
 from django.forms import ModelForm, widgets
 
-from .models import WorkerProfile, EmployerProfile
+from APPS.profiles.models import WorkerProfile, EmployerProfile
 
 from allauth.account.forms import SignupForm
 
