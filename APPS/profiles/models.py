@@ -67,6 +67,7 @@ class EmploymentHistory(models.Model):
 class EducationHistory(models.Model):
     profile = models.ForeignKey(WorkerProfile, on_delete=models.CASCADE, null=True, blank=True)
     schoole_name = models.CharField(max_length=200, blank=True, null=True)
+    title_name = models.CharField(max_length=200, blank=True, null=True)
     schoole_description = models.CharField(max_length=200, blank=True, null=True)
 
     from_date = models.CharField(max_length=15, blank=True, null=True)
