@@ -1,5 +1,7 @@
 from django.db import models
 
+from datetime import date
+
 from APPS.accounts.models import CustomUser
 
 class EmployerProfile(models.Model):
@@ -50,6 +52,15 @@ class WorkerProfile(models.Model):
     linkedin_link = models.CharField(max_length=96, blank=True)
     instagram_link = models.CharField(max_length=96, blank=True)
     youtube_link = models.CharField(max_length=96, blank=True)
+
+    def age(self):
+        year = date.today().year
+        if self.birth_year:
+            birth_year = int(self.birth_year)
+            age = int(year - birth_year)
+            return str(age)
+        else:
+            pass 
 
     def __str__(self):
         return self.user.email
