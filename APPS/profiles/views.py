@@ -6,7 +6,7 @@ from .models import WorkerProfile, EmployerProfile
 # user_is_employer
 
 @user_is_worker
-def my_profile(request):
+def my_profile(request, id):
     user = request.user
     profile = WorkerProfile.objects.get(user=user)
 
@@ -30,7 +30,7 @@ def my_profile(request):
     return render(request, "profiles/user_profile.html", context)
 
 @user_is_worker
-def eddit_my_profile(request):
+def eddit_my_profile(request, id):
     user = request.user
     profile = WorkerProfile.objects.get(user=user)
 

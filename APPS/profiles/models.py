@@ -1,11 +1,14 @@
 from django.db import models
 
+from uuid import uuid4
+
 from datetime import date
 
 from APPS.accounts.models import CustomUser
 
 class EmployerProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, db_index=True)
+    id = models.UUIDField(default=uuid4, unique=True, primary_key=True, editable=False)
 
     brand_name = models.CharField(max_length=96, blank=True)
     logo = models.ImageField(upload_to='company_logo', default='company_logo/defoult_logo.jpg')
@@ -31,6 +34,7 @@ class EmployerProfile(models.Model):
 
 class WorkerProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, db_index=True)
+    id = models.UUIDField(default=uuid4, unique=True, primary_key=True, editable=False)
 
     name = models.CharField(max_length=96, blank=True)
     surname = models.CharField(max_length=96, blank=True)

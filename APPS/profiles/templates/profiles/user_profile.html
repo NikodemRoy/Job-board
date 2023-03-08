@@ -41,7 +41,7 @@
                         <div class="twm-nav-list-1">
                             <ul>
                                 <li><a href="candidate-dashboard.html"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
-                                <li class="active"><a href="{% url 'my_profile' %}"><i class="fa fa-user"></i> My Pfofile</a></li>
+                                <li class="active"><a href="{% url 'my_profile' request.user.workerprofile.id %}"><i class="fa fa-user"></i> My Pfofile</a></li>
                                 <li><a href="candidate-jobs-applied.html"><i class="fa fa-suitcase"></i> Applied Jobs</a></li>
                                 <li><a href="candidate-my-resume.html"><i class="fa fa-receipt"></i> My Resume</a></li>
                                 <li><a href="candidate-saved-jobs.html"><i class="fa fa-file-download"></i> Saved Jobs</a></li>
@@ -263,7 +263,7 @@
                                                                                                                         
                                             <div class="col-lg-12 col-md-12">                                   
                                                 <div class="text-left">
-                                                    <a href="{% url 'eddit_my_profile' %}"><button class="site-button">Eddit Profile</button></a>
+                                                    <a href="{% url 'eddit_my_profile' request.user.workerprofile.id %}"><button class="site-button">Eddit Profile</button></a>
                                                 </div>
                                             </div> 
                                                                                 
@@ -364,7 +364,7 @@
                                                                                                         
                                         <div class="col-lg-12 col-md-12">                                   
                                                 <div class="text-left">
-                                                    <a href="{% url 'eddit_my_profile' %}"><button class="site-button">Eddit Profile</button></a>
+                                                    <a href="{% url 'eddit_my_profile' request.user.workerprofile.id %}"><button class="site-button">Eddit Profile</button></a>
                                                 </div>
                                             </div> 
                                                                                 
