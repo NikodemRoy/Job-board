@@ -7,8 +7,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('<str:id>', views.my_profile, name='my_profile'),
-    path('edit/<str:id>',views.eddit_my_profile, name="eddit_my_profile"),
+    path('<str:id>', views.worker_profile, name='worker_profile'),
+    path('edit/<str:id>',views.eddit_worker_profile, name="eddit_worker_profile"),
 ]
 
 # serving media files
