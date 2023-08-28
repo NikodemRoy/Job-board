@@ -109,7 +109,7 @@
                     </li>
 
                     {% if request.user.is_authenticated %}
-                    <li class="has-child"><a href="{% url 'my_profile' %}">My Profile</a>
+                    <li class="has-child">{% if request.user.is_employer%}<a href="{% url 'worker_profile' request.user.employerprofile.id %}" {% else %} <a href="{% url 'worker_profile' request.user.workerprofile.id %}" {% endif %}>My Profile</a>
                         <ul class="sub-menu">
                             <li><a href="blog.html">Dashboard</a></li>
                             <li><a href="blog-grid.html">Informations</a></li>
