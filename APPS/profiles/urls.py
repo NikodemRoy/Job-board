@@ -9,6 +9,7 @@ from . import views
 urlpatterns = [
     path('<str:id>', views.worker_profile, name='worker_profile'),
     path('edit/<str:id>',views.eddit_worker_profile, name="eddit_worker_profile"),
+    path('<str:id>', views.worker_profile, name='worker_profile'),
 ]
 
 # serving media files
