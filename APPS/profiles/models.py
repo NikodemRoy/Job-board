@@ -14,7 +14,11 @@ class EmployerProfile(models.Model):
     logo = models.ImageField(upload_to='company_logo', default='company_logo/defoult_logo.jpg')
     banner = models.ImageField(upload_to='company_baner', default='company_logo/defoult_baner.jpg')
 
-    address = models.CharField(max_length=96, blank=True)
+    country = models.CharField(max_length=96, blank=True)
+    city = models.CharField(max_length=96, blank=True)
+    post_code = models.CharField(max_length=96, blank=True)
+    street = models.CharField(max_length=96, blank=True)
+
     foundation_year = models.CharField(max_length=96, blank=True)
     phone_number = models.CharField(max_length=96, blank=True)
     number_of_workers = models.CharField(max_length=15, blank=True)

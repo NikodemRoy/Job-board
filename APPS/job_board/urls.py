@@ -8,6 +8,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index_page, name='index_page'),
+    path('employer/<str:employer_id>)/create', views.create_job_offer, name="create_job_offer"),
+    path('employer/<int:employer_id>)/eddit/<int:offer_id>', views.eddit_job_offer, name="eddit_job_offer")
 
 ]
 
