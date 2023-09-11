@@ -98,16 +98,16 @@ def eddit_employer_profile(request, id):
 
     
     if request.method == 'POST':
-        profile_form = WorkerProfileForm(request.POST, instance=profile)
+        profile_form = EmployerProfileForm(request.POST, instance=profile)
         if profile_form.is_valid():
             profile_form.save()
             print("powino zapisac")
             return redirect('worker_profile', id)
     else:
-        profile_form = WorkerProfileForm(instance=profile)
+        profile_form = EmployerProfileForm(instance=profile)
 
     context = {
         'profile_form':profile_form,
         'user':user,
     }
-    return render(request, "profiles/eddit_worker_profile.html", context)
+    return render(request, "profiles/eddit_employer_profile.html", context)
