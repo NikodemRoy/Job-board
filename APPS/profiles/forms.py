@@ -38,7 +38,7 @@ class EmployerProfileForm(forms.ModelForm):
             'brand_name': forms.TextInput(attrs={'placeholder': 'Add Your Brand Name'}),
             'country': forms.TextInput(attrs={'placeholder': 'Add Your Country'}),
             'city': forms.TextInput(attrs={'placeholder': 'Add Your Country'}),
-            'post_code': forms.TextInput(attrs={'placeholder': 'Add Your Country'}),
+            'post_code': forms.TextInput(attrs={'placeholder': 'Add Your Post Code'}),
             'street': forms.TextInput(attrs={'placeholder': 'Add Your Country'}),
             'phone_number': forms.TextInput(attrs={'placeholder': 'Add Your Phone Number'}),
             'number_of_workers': forms.NumberInput(attrs={'placeholder': 'Add Your Languages'}),

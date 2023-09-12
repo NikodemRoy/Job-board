@@ -43,7 +43,7 @@
                                 <li><a href="candidate-dashboard.html"><i class="fa fa-tachometer-alt"></i>
                                         Dashboard</a></li>
                                 <li class="active"><a href="{% url 'eddit_employer_profile' request.user.employerprofile.id %}"><i
-                                            class="fa fa-user"></i> My Pfofile</a></li>
+                                            class="fa fa-user"></i> Company Profile</a></li>
                                 <li><a href="candidate-jobs-applied.html"><i class="fa fa-suitcase"></i> Applied
                                         Jobs</a></li>
                                 <li><a href="candidate-my-resume.html"><i class="fa fa-receipt"></i> My Resume</a></li>
@@ -91,9 +91,9 @@
 
                                         <div class="col-xl-6 col-lg-6 col-md-12">
                                             <div class="form-group">
-                                                <label>Your Surname</label>
+                                                <label>Numer of empoyes</label>
                                                 <div class="ls-inputicon-box">
-                                                    {{profile_form.surname}}
+                                                    {{profile_form.number_of_workers}}
                                                     <i class="fs-input-icon fa fa-user-edit"></i>
                                                 </div>
                                             </div>
@@ -142,7 +142,7 @@
                                                 </div>
                                             </div> -->
 
-                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                        <!-- <div class="col-xl-6 col-lg-6 col-md-12">
                                             <div class="form-group">
                                                 <label>Language</label>
                                                 <div class="ls-inputicon-box">
@@ -161,7 +161,7 @@
                                                 </div>
 
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <!-- <div class="col-xl-6 col-lg-6 col-md-12">
                                                 <div class="form-group city-outer-bx has-feedback">
@@ -251,6 +251,17 @@
                                             </div>
                                         </div>
 
+                                        <div class="col-xl-4 col-lg-6 col-md-12">
+                                            <div class="form-group city-outer-bx has-feedback">
+                                                <label>Country</label>
+                                                <div class="ls-inputicon-box">
+                                                    {{profile_form.post_code}}
+                                                    <i class="fs-input-icon fa fa-globe-americas"></i>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
                                         <!-- <div class="col-xl-4 col-lg-12 col-md-12">
                                                 <div class="form-group city-outer-bx has-feedback">
                                                     <label>Postcode</label>
@@ -278,7 +289,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                {{profile_form.profile_description}}
+                                                {{profile_form.company_description}}
                                             </div>
                                         </div>
 

@@ -102,7 +102,7 @@ def eddit_employer_profile(request, id):
         if profile_form.is_valid():
             profile_form.save()
             print("powino zapisac")
-            return redirect('worker_profile', id)
+            return redirect('employer_profile', id)
     else:
         profile_form = EmployerProfileForm(instance=profile)
 
