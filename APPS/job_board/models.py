@@ -21,6 +21,12 @@ class JobCategory(models.Model):
 
     def __str__(self):
         return self.name
+    
+class JobLanguage(models.Model):
+    language = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.language
 
 class JobOffer(models.Model):
     employer = models.ForeignKey(EmployerProfile, related_name='EmployerProfile', on_delete=models.CASCADE)
@@ -34,6 +40,7 @@ class JobOffer(models.Model):
     job_type = models.CharField(choices=JOB_TYPE, max_length=30)
     category = models.ManyToManyField(JobCategory,related_name='Category', blank=True)
     experience = models.CharField(max_length=4)
+    language = models.ManyToManyField(JobLanguage,related_name='Category', blank=True)
 
     salary = models.CharField(max_length=30, blank=True)
     monthly_working_hours = models.CharField(max_length=30)

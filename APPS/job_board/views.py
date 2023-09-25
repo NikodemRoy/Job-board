@@ -8,7 +8,9 @@ def index_page(request):
 
 @user_is_employer
 def create_job_offer(request, employer_id):
-    return redirect(index_page)
+
+    context = {}
+    return render(request, "job_board/create_job.html", context)
 
 @user_is_employer
 def eddit_job_offer(request, employer_id, offer_id):

@@ -45,6 +45,8 @@
                                 <li class="active"><a
                                         href="{% url 'employer_profile' request.user.employerprofile.id %}"><i
                                             class="fa fa-user"></i> My Profile</a></li>
+                                <li><a href="{% url 'create_job_offer' request.user.employerprofile.id %}"><i class="fa fa-book-reader"></i>
+                                        Create Job</a></li>
                                 <li><a href="candidate-jobs-applied.html"><i class="fa fa-suitcase"></i> Applied
                                         Jobs</a></li>
                                 <li><a href="candidate-my-resume.html"><i class="fa fa-receipt"></i> My Resume</a></li>
@@ -363,8 +365,8 @@
                                             {% if twitter_link %}<a href="{{twitter_link}}">{% endif %}
                                                 <div class="ls-inputicon-box">
                                                     <input class="form-control wt-form-control" name="company_name"
-                                                        type="text" placeholder={% if twitter_link %} "{{twitter_link}}" readonly
-                                                        {% else %} "Add Twitter link" readonly {% endif %}>
+                                                        type="text" placeholder={% if twitter_link %} "{{twitter_link}}"
+                                                        readonly {% else %} "Add Twitter link" readonly {% endif %}>
                                                     <i class="fs-input-icon fab fa-twitter"></i>
                                                 </div>
                                             </a>
