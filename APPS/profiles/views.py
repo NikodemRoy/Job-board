@@ -103,6 +103,7 @@ def employer_profile(request, id):
     youtube_link = profile.youtube_link
 
     context = {
+        "brand_email":brand_email,
         "brand_name":brand_name,
         "brand_country":brand_country,
         "brand_city":brand_city,
