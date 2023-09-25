@@ -91,7 +91,7 @@
 
                                         <div class="col-xl-6 col-lg-6 col-md-12">
                                             <div class="form-group">
-                                                <label>Numer of empoyes</label>
+                                                <label>Team Size</label>
                                                 <div class="ls-inputicon-box">
                                                     {{profile_form.number_of_workers}}
                                                     <i class="fs-input-icon fa fa-user-edit"></i>
@@ -120,6 +120,15 @@
                                             </div>
                                         </div>
 
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
+                                            <div class="form-group">
+                                                <label>Website</label>
+                                                <div class="ls-inputicon-box">
+                                                    {{profile_form.website}}
+                                                    <i class="fs-input-icon fa fa-language"></i>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <!-- <div class="col-xl-6 col-lg-6 col-md-12">
                                                 <div class="form-group">
@@ -229,7 +238,7 @@
                                             </div>
          -->
 
-                                        <div class="col-xl-4 col-lg-6 col-md-12">
+                                        <div class="col-xl-6 col-lg-6 col-md-12">
                                             <div class="form-group city-outer-bx has-feedback">
                                                 <label>Country</label>
                                                 <div class="ls-inputicon-box">
@@ -253,9 +262,20 @@
 
                                         <div class="col-xl-4 col-lg-6 col-md-12">
                                             <div class="form-group city-outer-bx has-feedback">
-                                                <label>Country</label>
+                                                <label>Post Code</label>
                                                 <div class="ls-inputicon-box">
                                                     {{profile_form.post_code}}
+                                                    <i class="fs-input-icon fa fa-globe-americas"></i>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-6 col-md-12">
+                                            <div class="form-group city-outer-bx has-feedback">
+                                                <label>Street</label>
+                                                <div class="ls-inputicon-box">
+                                                    {{profile_form.street}}
                                                     <i class="fs-input-icon fa fa-globe-americas"></i>
                                                 </div>
 
