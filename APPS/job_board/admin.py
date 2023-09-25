@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import JobOffer, JobCategory
+from .models import JobOffer, JobCategory, JobLanguage
 
 class JobOfferAdmin(admin.ModelAdmin):
     list_display = ['employer', 'title', 'job_type', 'created_date',]
@@ -9,6 +9,7 @@ class JobOfferAdmin(admin.ModelAdmin):
 
 
 admin.site.register(JobCategory)
+admin.site.register(JobLanguage)
 admin.site.register(JobOffer, JobOfferAdmin)
 
 

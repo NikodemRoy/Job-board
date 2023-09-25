@@ -33,14 +33,15 @@ class JobOffer(models.Model):
 
     title = models.CharField(max_length=300)
     description = models.TextField(max_length=20000)
+    country = models.CharField(max_length=300, blank=True)
     city = models.CharField(max_length=300)
     post_code = models.CharField(max_length=300)
     addres = models.CharField(max_length=300)
 
     job_type = models.CharField(choices=JOB_TYPE, max_length=30)
-    category = models.ManyToManyField(JobCategory,related_name='Category', blank=True)
+    category = models.ManyToManyField(JobCategory, blank=True)
     experience = models.CharField(max_length=4)
-    language = models.ManyToManyField(JobLanguage,related_name='Category', blank=True)
+    language = models.ManyToManyField(JobLanguage, blank=True)
 
     salary = models.CharField(max_length=30, blank=True)
     monthly_working_hours = models.CharField(max_length=30)
