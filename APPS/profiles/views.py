@@ -79,14 +79,46 @@ def eddit_worker_profile(request, id):
 user_is_employer
 def employer_profile(request, id):
     user = request.user
+
     profile = get_object_or_404(EmployerProfile, user=user)
 
-    profile_form = EmployerProfileForm(instance=profile)
+    brand_email = user.email
+
+    brand_name = profile.brand_name
+    brand_country = profile.country
+    brand_city = profile.city
+    brand_post_code = profile.post_code
+    brand_street = profile.street
+    brand_phone_number = profile.phone_number
+    brand_number_of_workers = profile.number_of_workers
+    brand_website = profile.website
+
+
+    brand_description = profile.company_description
+
+    fb_link = profile.fb_link
+    twitter_link = profile.twitter_link
+    linkedin_link = profile.linkedin_link
+    instagram_link = profile.instagram_link
+    youtube_link = profile.youtube_link
 
     context = {
-        'profile_form':profile_form,
-        'user':user,
-    }
+        "brand_name":brand_name,
+        "brand_country":brand_country,
+        "brand_city":brand_city,
+        "brand_post_code":brand_post_code,
+        "brand_street":brand_street,
+        "brand_phone_number":brand_phone_number,
+        "brand_number_of_workers":brand_number_of_workers,
+        "brand_website":brand_website,
+        "brand_description":brand_description,
+        "fb_link":fb_link,
+        "twitter_link":twitter_link,
+        "linkedin_link":linkedin_link,
+        "instagram_link":instagram_link,
+        "youtube_link":youtube_link,
+        }
+
 
     return render(request, "profiles/employer_profile.html", context)
 
