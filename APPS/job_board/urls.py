@@ -9,7 +9,9 @@ from . import views
 urlpatterns = [
     path('', views.index_page, name='index_page'),
     path('employer/offer/create/<str:employer_id>', views.create_job_offer, name="create_job_offer"),
-    path('employer/offer/eddit/<int:employer_id>/<int:offer_id>', views.eddit_job_offer, name="eddit_job_offer")
+    path('employer/offer/manage/<str:employer_id>', views.manage_job_offer, name="manage_job_offer"),
+    path('employer/offer/eddit/<str:employer_id>/<int:offer_id>', views.eddit_job_offer, name="eddit_job_offer"),
+
 
 ]
 
